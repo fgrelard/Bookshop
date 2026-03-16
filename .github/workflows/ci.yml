@@ -23,8 +23,6 @@ jobs:
          args: --configuration phpunit.xml --log-junit junit.xml
 
      - name: Upload to Codecov
-       uses: codecov/codecov-action@v2
+       uses: codecov/test-results-action@v1
        with:
          token: ${{ secrets.CODECOV_TOKEN }}
-         files: ./junit.xml
-         verbose: true
