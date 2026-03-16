@@ -1,0 +1,43 @@
+# ============================================================
+# Codecov Project Configuration for PHP / PHPUnit
+# ============================================================
+
+codecov:
+  require_ci_to_pass: true
+
+coverage:
+  precision: 2
+  round: down
+  range: "70...100"   # Display range in UI
+
+  status:
+    project:
+      default:
+        # Minimum acceptable project coverage percentage
+        target: 100%
+        threshold: 2%
+        informational: false
+    patch:
+      default:
+        # Require that code added/changed is covered
+        target: 100%
+        threshold: 1%
+
+comment:
+  layout: "reach, diff, flags, files, suggestions"
+  behavior: default
+  require_changes: false
+  require_base: no
+  require_head: yes
+
+ignore:
+  - "tests/*"
+  - "vendor/*"
+  - "database/*"
+  - "storage/*"
+
+flags:
+  phpunit:
+    paths:
+      - src/
+    carryforward: true
