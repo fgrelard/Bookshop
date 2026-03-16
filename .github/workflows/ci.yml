@@ -20,7 +20,7 @@ jobs:
        with:
          bootstrap: vendor/autoload.php
          php_extensions: xdebug
-         args: --configuration phpunit.xml --coverage-clover ./coverage.xml tests
+         args: --configuration phpunit.xml --log-junit junit.xml
 
      - name: Upload to Codecov
        uses: codecov/codecov-action@v2
