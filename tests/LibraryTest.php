@@ -21,17 +21,11 @@ class LibraryTest extends TestCase {
     public function testAddBook() {
         $this->library->addBook($this->book1);
         $this->assertSame([$this->book1], $this->library->getBooks());
-        return $this->library;
     }
     
-    /**
-     * 
-     * 
-     * @depends testAddBook
-     */
-    public function testFindBookByIsbn(Library &$library) {
-        
-        $this->assertSame($this->book1, $library->findBookByIsbn($this->book1->getIsbn()));
+    public function testFindBookByIsbn() {
+        $this->library->addBook($this->book1);
+        $this->assertSame($this->book1, $this->library->findBookByIsbn($this->book1->getIsbn()));
 
         $this->assertNull($this->library->findBookByIsbn($this->book2->getIsbn()));
     }
