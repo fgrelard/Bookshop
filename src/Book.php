@@ -11,7 +11,7 @@ class Book {
     }
 
     public function getAuthor() {
-        return $this->title;
+        return $this->author;
     }
 
     public function getIsbn() {
